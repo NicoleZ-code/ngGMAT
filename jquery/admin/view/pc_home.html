@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心-主页</title>
+</head>
+<body>
+	<div class="pc_home">
+		<div class="personal_left">
+			<div class="trends border-common">
+				<div class="history_talk">
+					<span class="last">三月三月三月三月三月三月，三月三月三月三月......</span>
+					<span class="btnhistory_list" onclick="gotoMenu(0,'pc_historytalk.html')" title="进入历史说说">历史说说</span>
+				</div>
+				<dl class="expression">
+					<dd class="dd01">
+						<span class="ico" data-info="点赞"></span>						
+						<span class="num">122</span>
+						<span class="anmi_ico"></span>
+					</dd>
+					<dd class="dd02">
+						<span class="ico" data-info="拥抱"></span>						
+						<span class="num">333</span>
+						<span class="anmi_ico"></span>
+					</dd>
+					<dd class="dd03">
+						<span class="ico" data-info="安慰"></span>
+						<span class="num">444</span>
+						<span class="anmi_ico"></span>						
+					</dd>
+				</dl>
+				<div class="sendmessage">
+					<input type="text" class="messagetext" placeholder="说点什么吧......(xxx字以内)">
+					<span class="btnsend commonbtn">发表</span>
+				</div>
+			</div>
+			
+			<div class="app_center border-common">
+				<div class="pc_title"><span>应用中心</span></div>
+				<div class="applistbox">
+					<ul class="applist">
+						<li class="li01" onclick="gotoMenu(0,'pc_h_rubbish.html')">垃圾桶</li>
+						<li class="li02" onclick="gotoMenu(0,'pc_h_messagecenter.html')">消息中心</li>
+						<li class="li03" onclick="gotoMenu(0,'pc_h_advice.html')">意见反馈</li>
+						<li class="add">添加</li>
+					</ul>
+				</div>						
+			</div>
+
+			<div class="history_record border-common">
+				<div class="pc_title"><span>历史学习记录</span></div>
+				<div class="cal_box">
+					<div class="Calendar">
+								<div class="Calendar_top">
+							
+									<span id="idCalendarPre">
+										<img src="../images/right-jt.png" width="10" height="18">
+									</span> 
+									<span class="Calendar_input"> 
+									<span id="idCalendarYear"></span> 年 <span id="idCalendarMonth"></span> 月 </span> <span id="idCalendarNext">
+									<img src="../images/left-jt.png" width="10" height="18">
+									</span>
+								</div>
+							<table cellspacing="0" class="tb_date">
+								<thead>
+									<tr>
+										<th>周日</th>
+										<th>周一</th>
+										<th>周二</th>
+										<th>周三</th>
+										<th>周四</th>
+										<th>周五</th>
+										<th>周六</th>
+									</tr>
+								</thead>
+								<tbody id="idCalendar">
+								</tbody>
+							</table>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="personal_right">
+			<div class="today_sign border-common">
+				<span class="sign_title">今日签到</span>
+				<ul>
+					<li id="a"><span class="ico ico1">喝水<span class="anmi_ico"></span></span>
+						<span class="sign_num"><em class="num">2</em class="num">次</span>
+					</li>
+					<li id="b"><span class="ico ico2">吃水果<span class="anmi_ico"></span></span>
+						<span class="sign_num"><em class="num">2</em class="num">次</span>
+					</li>
+					<li id="c"><span class="ico ico3">运动<span class="anmi_ico"></span></span>
+						<span class="sign_num"><em class="num">3</em class="num">次</span>
+					</li>
+					<li id="d"><span class="ico ico4">休息<span class="anmi_ico"></span></span>
+						<span class="sign_num"><em class="num">2</em>次</span>
+					</li>
+				</ul>
+			</div>
+			<div class="today_plan border-common">
+				<div class="pc_title"><span>今日学习计划</span></div>
+				<form action="">
+					<textarea name="" id="txttoday_plan"></textarea>
+					<input type="button" class="btn01 commonbtn" value="学习开始">
+					<input type="button" class="btn02 commonbtn" value="学习结束">
+				</form>
+				
+			</div>
+			<div class="hot_student border-common">
+				<div class="pc_title"><span>人气学员</span></div>
+				<ul>
+					<li onclick="changeAdmin(true,'pc_index_guest.html')">
+						<span class="p_logo"><img src="../images/succ_case_1.png"></span>
+						<span class="p_name">wendy</span>
+					</li>
+					<li onclick="changeAdmin(true,'pc_index_guest.html')">
+						<span class="p_logo"><img src="../images/succ_case_2.png"></span>
+						<span class="p_name">wendy</span>
+					</li>
+					<li onclick="changeAdmin(true,'pc_index_guest.html')">
+						<span class="p_logo"><img src="../images/succ_case_3.png"></span>
+						<span class="p_name">wendwendywendywendywendyy</span>
+					</li>
+					<li onclick="changeAdmin(true,'pc_index_guest.html')">
+						<span class="p_logo"><img src="../images/online_exer_7.png"></span>
+						<span class="p_name">wendy</span>
+					</li>
+					<li onclick="changeAdmin(true,'pc_index_guest.html')">
+						<span class="p_logo"><img src="../images/online_exer_5.png"></span>
+						<span class="p_name">wendy</span>
+					</li>
+					<li onclick="changeAdmin(true,'pc_index_guest.html')">
+						<span class="p_logo"><img src="../images/online_exer_6.png"></span>
+						<span class="p_name">wendy</span>
+					</li>
+					<li onclick="changeAdmin(true,'pc_index_guest.html')">
+						<span class="p_logo"><img src="../images/online_exer_6.png"></span>
+						<span class="p_name">wendy</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>	
+<script type="text/javascript">
+
+	$(function(){
+		time("idCalendar","idCalendarPre","idCalendarNext");
+
+		//动画
+		$(".expression dd ").on("click"," .ico",function(){
+			anmiateIco(this);
+			var $num =$(this).parent("").find(".num");
+			var value = parseInt($num.html())+1;
+			$num.html(value);
+		})
+		$(".today_sign li ").on("click"," .ico",function(){
+			anmiateIco(this);
+			var $num =$(this).parent("").find(".num");
+			var value = parseInt($num.html())+1;
+			var id =$(this).parent("").attr("id");
+			$num.html(value);
+		})
+	})
+</script>
+</body>
+</html>

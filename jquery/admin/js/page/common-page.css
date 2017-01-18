@@ -1,0 +1,83 @@
+/*通用分页插件-start*/
+.commonpage {
+    padding: 0;
+    text-align: left;
+    color: #ccc;
+    float: right;
+    margin-top: 20px;   
+    margin-bottom: 20px;
+    height: 32px;
+}
+.commonpage.maxwidth570{
+  max-width: 570px;
+}
+.commonpage a {
+    display: inline-block;
+    color: #555;
+    margin:  0 5px; 
+    height: 31px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+}
+.commonpage .more{
+  color: #555;
+}
+.commonpage a.tcdNumber{
+    background: url(commonpage.png) no-repeat -8px -95px;  
+    width: 46px; 
+}
+.commonpage .prevPage{
+  margin-right: 16px;
+  margin-left: 0;
+}
+.commonpage .nextPage{
+  margin-left: 16px;
+  margin-right: 0px;
+}
+.commonpage a.prevPage{
+    background: url(commonpage.png) no-repeat 0px -32px;
+    width: 64px;
+    height: 32px;
+    font-size: 0;
+}
+.commonpage a.nextPage{
+    background: url(commonpage.png) no-repeat 0px -158px;
+    width: 64px;
+    height: 32px;
+    font-size: 0;
+}
+.commonpage a:hover {
+    /* text-decoration: none; */
+    /* border: 1px solid #428bca; */
+}
+.commonpage span.current {
+    display: inline-block;  
+    color: #fff;  
+    background: url(commonpage.png) no-repeat -8px -64px;  
+    margin: 0 5px;
+    width: 46px;  
+    height: 31px;  
+    line-height: 30px;  
+    font-size: 14px;  
+    text-align: center; 
+    vertical-align: middle;
+}
+.commonpage span.disabled {
+    display: inline-block;
+    width: 64px;
+    height: 32px;   
+    font-size: 0;
+    vertical-align: middle;
+}
+.commonpage span.disabled.prevPage{
+    background: url(commonpage.png) no-repeat 0 0px; 
+}
+.commonpage span.disabled.nextPage{
+    background: url(commonpage.png) no-repeat 0 -126px; 
+}
+#common-wrap{
+    background-color:#fff;
+}
+/*公共分页插件-end*/

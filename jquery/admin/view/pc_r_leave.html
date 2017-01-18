@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心-请假记录</title>
+</head>
+<body>
+	<div class="pc_r_leave">
+		<p class="detail_title"><span onclick="gotoMenu(0,'pc_home.html')">我的主页</span>&nbsp;&gt;&nbsp;<span class="not">历史购买</span>&nbsp;&gt;&nbsp;<span class="blu">请假记录</span></p>
+		<div class="search_topic leave_content">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<td width="160">请假人</td>
+						<td width="340">课程</td>
+						<td width="240">开始时间</td>
+						<td width="240">结束时间</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Tracy-0101</td>
+						<td>GMAT阅读课程</td>
+						<td>2016-06-08</td>
+						<td>2016-09-10</td>
+					</tr>
+					<tr>
+						<td>Tracy-0101</td>
+						<td>GMAT阅读课程</td>
+						<td>2016-06-08</td>
+						<td>2016-09-10</td>
+					</tr>
+					<tr>
+						<td>Tracy-0101</td>
+						<td>GMAT阅读课程</td>
+						<td>2016-06-08</td>
+						<td>2016-09-10</td>
+					</tr>
+					<tr>
+						<td>Tracy-0101</td>
+						<td>GMAT阅读课程</td>
+						<td>2016-06-08</td>
+						<td>2016-09-10</td>
+					</tr>
+					<tr>
+						<td>Tracy-0101</td>
+						<td>GMAT阅读课程</td>
+						<td>2016-06-08</td>
+						<td>2016-09-10</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="commonpage"></div>
+		</div>	
+	</div>
+<script type="text/javascript">
+$(function(){
+	var pageSize=6;
+	var total=110;
+	var totalPage=10;
+	var current=1;
+	  // total= getList(current,pageSize);
+	  // totalPage=parseInt(((total+pageSize)-1)/pageSize);
+	$(".commonpage").createPage({
+		 pageCount:totalPage,//页数的总数
+         pageSize:pageSize,//每页10条记录
+         current:current, //默认第一页
+         position:"center",
+         backFn:function(pageCurrent,pageSize,pageCount){
+        	// var pageCurrent=current;
+ 	     } 
+  	});
+
+});
+</script>
+</body>
+</html>

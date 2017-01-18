@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心-首页</title>
+	<link href="../images/favicon.png" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">	
+	<link rel="stylesheet" type="text/css" href="../js/page/common-page.css">
+</head>
+<body style="background-color:#f1f1f1;">
+	<div class="p_centerhead">
+		<div class="head">
+			<h1 class="logo">
+				<a href="../index.html"><img src="../images/logo_p.png"></a>
+			</h1>
+			<div class="phead_links">
+				<span class="p_exit"><a href="#">退出</a></span>
+				<span class="p_home"><a href="../index.html">首页</a></span>
+				<span class="personalinfo" onclick="changeAdmin(false,'pc_index_center.html')" title="点击返回我的主页">wendy-0809 </span>
+				<span class="rubbish com-ico" title="垃圾桶" onclick="gotoMenu(0,'pc_h_rubbish.html')"></span>
+				<span class="messagecenter com-ico" title="消息中心" onclick="gotoMenu(0,'pc_h_messagecenter.html')">
+					<em id="messageNum" class="num">99</em>
+				</span>
+				<span class="advice com-ico" title="意见建议" onclick="gotoMenu(0,'pc_h_advice.html')"></span>
+			</div>
+		</div>
+	</div>
+	<div id="p_index_container" class=" online_exercise">
+
+	</div>
+	<div class="footer">
+		<a href="">网站说明 </a>     
+		<a href="">客服电话 </a>    
+		<a href="">联系我们</a>          
+	</div>	
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>	
+<script type="text/javascript" src="../js/global-pcenter.js"></script>
+<script type="text/javascript" src="../js/page/page.js"></script>
+<script type="text/javascript" src="../js/layer-v2.1/layer.js"></script>
+<script type="text/javascript" src="../js/roll.js" ></script>
+<script type="text/javascript" src="../js/time1.js" ></script>
+<script type="text/javascript" src="../js/time_show.js" ></script>
+<script type="text/javascript" src="../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../js/calendar/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript">
+	$(function(){
+		setMmessageNum();
+		changeAdmin(false,'pc_index_center.html')
+	})
+function setMmessageNum(){
+	var value = parseInt($("#messageNum").html());
+	if(value>99){
+		value =99;
+		$("#messageNum").html(value+"+");
+	}
+	if(value==0){
+		$("#messageNum").hide();
+	}
+}
+
+</script>
+</body>
+</html>

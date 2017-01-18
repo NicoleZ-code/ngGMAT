@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模考记录详情页</title>
+</head>
+<body>
+	<div class="pc_detail_record">
+		<p class="detail_title"><span onclick="gotoMenu(0,'pc_home.html')">我的主页</span>&nbsp;&gt;&nbsp;<span onclick="gotoMenu(4,'pc_exam_record.html')">模考记录</span>&nbsp;&gt;&nbsp;<span class="blu">题库详情</span></p>
+		<div class="pc_detail_record_content">
+			<p class="pc_1">1、Although some consultants insist that agencies should offer all-inclusive fixed-agenda packages to overseas trahy, others advise.Although some consultants insist that agencies.</p>
+			<p class="pc_2">A.&nbsp;insist that agencies should offer all-inclusive</p>
+			<p class="pc_2">B.&nbsp;insist that agencies should offer all-inclusive</p>
+			<p class="pc_2">C.&nbsp;insist that agencies shuld offer all-inclusive</p>
+			<p class="pc_2">D.&nbsp;insist that ageies should offer all-inclusive</p>
+			<p class="pc_2">E.&nbsp;insist that agencies should offer all</p>
+			<div class="answer_detail">
+				<span><span class="wrong">E</span>/A</span>
+				<p>句子的重点是说：ugh some consultants insist that agencies should offer all-inclusive fixed-agenda packages to overseas trahy, others advise.Althou句子的重点是说：ugh some consultants insist that agencies should offer all-inclusive fixed-agenda packages to overseas trahy, others advise.</p>
+			</div>
+		</div>
+		<div class="pc_detail_record_content">	
+			<p class="pc_1">2、Although some consultants insist that agencies should offer all-inclusive fixed-agenda packages to overseas trahy, others advise.Although some consultants insist that agencies.</p>
+			<p class="pc_2">A.&nbsp;insist that agencies should offer all-inclusive</p>
+			<p class="pc_2">B.&nbsp;insist that agencies should offer all-inclusive</p>
+			<p class="pc_2">C.&nbsp;insist that agencies shuld offer all-inclusive</p>
+			<p class="pc_2">D.&nbsp;insist that ageies should offer all-inclusive</p>
+			<p class="pc_2">E.&nbsp;insist that agencies should offer all</p>
+			<div class="answer_detail">
+				<span><span class="true">A</span>/A</span>
+				<p>句子的重点是说：ugh some consultants insist that agencies should offer all-inclusive fixed-agenda packages to overseas trahy, others advise.Althou句子的重点是说：ugh some consultants insist that agencies should offer all-inclusive fixed-agenda packages to overseas trahy, others advise.</p>
+			</div>
+		</div>
+		<div class="pc_detail_record_content">
+			<p class="pc_1">3、Although some consultants insist that agencies should offer all-inclusive fixed-agenda packages to overseas trahy, others advise.Although some consultants insist that agencies.</p>
+			<p class="pc_2">A.&nbsp;insist that agencies should offer all-inclusive</p>
+			<p class="pc_2">B.&nbsp;insist that agencies should offer all-inclusive</p>
+			<p class="pc_2">C.&nbsp;insist that agencies shuld offer all-inclusive</p>
+			<p class="pc_2">D.&nbsp;insist that ageies should offer all-inclusive</p>
+			<p class="pc_2">E.&nbsp;insist that agencies should offer all</p>
+			<div class="answer_detail">
+				<span><span class="wrong">D</span>/A</span>
+				<p>句子的重点是说：ugh some consultants insist that agencies should offer all-inclusive fixed-agenda packages to overseas trahy, others advise.Althou句子的重点是说：ugh some consultants insist that agencies should offer all-inclusive fixed-agenda packages to overseas trahy, others advise.</p>
+			</div>
+		</div>
+		<div class="commonpage"></div>
+	</div>
+<script type="text/javascript">
+$(function(){
+	var pageSize=6;
+	var total=110;
+	var totalPage=10;
+	var current=1;
+	  // total= getList(current,pageSize);
+	  // totalPage=parseInt(((total+pageSize)-1)/pageSize);
+	$(".commonpage").createPage({
+		 pageCount:totalPage,//页数的总数
+         pageSize:pageSize,//每页10条记录
+         current:current, //默认第一页
+         position:"center",
+         backFn:function(pageCurrent,pageSize,pageCount){
+        	// var pageCurrent=current;
+ 	     } 
+  	});
+});
+</script>	
+</body>
+</html>

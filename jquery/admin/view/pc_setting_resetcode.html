@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心-修改密码</title>
+</head>
+<body>
+	<div class="pc_setting_resetcode">
+		<p class="detail_title"><span onclick="gotoMenu(0,'pc_home.html')">我的主页</span>&nbsp;&gt;&nbsp;<span class="not">账号设置</span>&nbsp;&gt;&nbsp;<span class="blu">修改密码</span></p>
+		<ul class="resetcode_content">
+		 			<li>
+		 				<span class="reg_1">当前密码<span class="reg_2">*</span></span><input type="password" value="">
+		 			</li>
+		 			<li>
+		 				<span class="reg_1">新密码<span class="reg_2">*</span></span>
+		 				<input type="password" value="" id="pass">
+		 				<span class="reg_3 pass">
+		 					密码长度应为6-16个字符<br/>
+		 					<span class="pass_text">强度：</span><span class="pass_level"><span class="pass_le"></span></span>
+		 				</span>
+		 			</li>
+		 			<li>
+		 				<span class="reg_1">确认密码<span class="reg_2">*</span></span><input type="password" value="">
+		 			</li>
+		 			<li>
+		 				<span class="reg_1">验证码<span class="reg_2">*</span></span>
+		 				<div class="box">
+                        	<span id="dragEle" class="btn"></span>                      	
+                      	</div> 
+		 				<span class="reg_3 tips">滑动滑块以完成验证</span>
+		 			</li>
+		 			<span class="register_now" id="submit">保存</span>
+		</ul>
+	</div>
+<script type="text/javascript">
+$(function(){
+	DragValidate($("#dragEle"),$(".tips"),$(".box"));
+    $("#submit").click(function(){
+        if(!$("#dragEle").attr("validate")){
+            layer.alert("请先拖动滑块验证！");
+        }else{
+            layer.alert("修改密码成功！",{icon:1},function(index){
+                layer.close(index);
+                gotoMenu(0,"pc_home.html");
+            });
+            
+        }
+    });
+});
+ function DragValidate (dargEle,msgEle,boxEle){
+        var dragging = false;//滑块拖动标识
+        var iX;
+        dargEle.mousedown(function(e) {
+            msgEle.text("");
+            dragging = true;
+            iX = e.clientX; //获取初始坐标
+        });
+        $(document).mousemove(function(e) {
+            if (dragging) {               
+                var e = e || window.event;
+                var oX = e.clientX - iX;
+                if(oX < 30){
+                    return false;
+                };
+                if(oX >= 258){//容器宽度+10                	
+                    oX = 266;
+                    dargEle.width(oX + "px");                                      
+                    return true;
+                };                
+               dargEle.width(oX + "px");
+                return false;
+            };
+        });
+        $(document).mouseup(function(e) {
+            var width = dargEle.width();            
+            if(width < 266){
+                //console.log(width);
+                dargEle.width("60px");
+                msgEle.text("滑动滑块以完成验证");
+            }else{
+                dargEle.attr("validate","true").unbind("mousedown");
+                msgEle.text("验证成功！");
+                boxEle.css("background-image","none");
+            };
+            dragging = false;
+        });
+};
+
+$(function(){ 
+    $('#pass').keyup(function () { 
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g"); 
+        var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g"); 
+        var enoughRegex = new RegExp("(?=.{6,}).*", "g"); 
+        if (false == enoughRegex.test($(this).val())) { 
+             $(".pass_le").css("width","0%");
+             //密码小于六位的时候，密码强度为0
+        } 
+        else if (strongRegex.test($(this).val())) { 
+            $(".pass_le").css("width","100%");
+             //密码为八位及以上并且字母数字特殊字符三项都包括,强度最强 
+        } 
+        else if (mediumRegex.test($(this).val())) { 
+            $(".pass_le").css("width","66.6%");
+             //密码为七位及以上并且字母、数字、特殊字符三项中有两项，强度是中等 
+        } 
+        else { 
+           $(".pass_le").css("width","33.3%");
+             //如果密码为6为及以下，就算字母、数字、特殊字符三项都包括，强度也是弱的 
+        } 
+        return true; 
+    }); 
+}) 
+</script>
+</body>
+</html>

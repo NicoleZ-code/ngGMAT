@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心-index-center</title>
+</head>
+<body>
+	<div id="p_center_left" class="left">
+		<div class="personal">
+			<div class="personal_top">
+				<div class="pic">
+					<img src="../images/online_exer_1.png">
+				</div>
+				<div class="vip">
+					<img src="../images/online_exer_3.png">
+				</div>
+			</div>
+			<div class="name">
+				<span>wendy-0809</span><br/>
+				<a href="pc_vip.html" class="vip">升级为VIP</a>
+			</div>
+			<div class="personal_bottom">
+				<div class="personal_1">
+					<h1>VIP会员</h1>
+					<h2>用户类型</h2>
+				</div>
+				<div class="personal_2"></div>
+				<div class="personal_3">
+					<h1>20小时</h1>
+					<h2>学习时长</h2>
+				</div>
+			</div>
+		</div>			
+		<ul id="pc_leftmenus">
+			<li class="pc_title" data-src="pc_home.html"><span class="p-simple">我的主页</span></li>
+			<li class="li00">					
+				<span class="p-simple">
+					<span class="bg"></span>
+					<span class="ico"></span>
+					<span class="name">账号设置</span>
+					<span class="arrow"></span>
+				</span>
+				<dl>
+					<dd data-src="pc_setting_writedata.html">完善资料</dd>
+					<dd data-src="pc_setting_resetcode.html">修改密码</dd>
+				</dl>
+			</li>
+			<li class="li01" data-src="pc_finished_exercise.html">
+				<span class="p-simple">
+					<span class="bg"></span>
+					<span class="ico"></span>
+					<span class="name">已做题目</span>
+				</span>	
+			</li>
+			<li class="li02" data-src="pc_wrong_exercise.html">
+				<span class="p-simple">
+					<span class="bg"></span>
+					<span class="ico"></span>
+					<span class="name">错题集</span>
+				</span>	
+			</li>
+			<li class="li03" data-src="pc_exam_record.html">
+				<span class="p-simple">
+					<span class="bg"></span>
+					<span class="ico"></span>
+					<span class="name">模考记录</span>
+				</span>	
+			</li>
+			<li class="li04" data-src="pc_mycollect.html">
+				<span class="p-simple">
+					<span class="bg"></span>
+					<span class="ico"></span>
+					<span class="name">我的收藏</span>
+				</span>
+			</li>
+			<li class="li05" data-src="pc_myquestions.html">
+				<span class="p-simple">
+					<span class="bg"></span>
+					<span class="ico"></span>
+					<span class="name">我的提问</span>
+				</span>
+			</li>
+			<li class="li06">
+				<span class="p-simple">
+					<span class="bg"></span>
+					<span class="ico"></span>
+					<span class="name">历史购买</span>
+					<span class="arrow"></span>
+				</span>					
+				<dl>
+					<dd data-src="pc_r_record.html">购买记录</dd>
+					<dd data-src="pc_r_leave.html">请假记录</dd>
+					<dd data-src="pc_r_goods.html">物流查询</dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+	<div id="pc-home-container"></div>
+<script type="text/javascript">
+	$(function  () {
+		$("#pc_leftmenus li").eq(0).find(".p-simple").trigger("click"); 
+	})
+</script>
+</body>
+</html>

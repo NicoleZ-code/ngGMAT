@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心-我的提问</title>
+</head>
+<body>
+<div class="pc_myquestion">
+	<div class="search_condition">
+		<form action="">
+			<div class="mqitem searchtxt-box">
+				<input  type="text" value="搜索你的问题" onfocus="if(value=='搜索你的问题'){value=''}" onblur="if(value==''){value='搜索你的问题'}">
+				<input type="button" id="" class="commonbtn" value="SEARCH">
+			</div>
+			<div class="mqitem">
+				<input  type="text" value="输入标题" onfocus="if(value=='输入标题'){value=''}" onblur="if(value==''){value='输入标题'}">
+			</div>
+			<div class="mqitem">
+				<textarea  id="qcontent" type="text" placeholder="输入你想问的问题"></textarea> 
+			</div>
+			<div class="mqitem"><input type="button" id="" class="btnsubmit commonbtn" value="提交"></div>
+		</form>
+	</div>
+	<div class="search_topic">
+		<table border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<td width="50">序号</td>
+					<td width="">标题</td>
+					<td width="180">留言时间</td>
+					<td width="120">回复量</td>
+					<td width="80">操作</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox">01</td>
+					<td class="t-title" onclick="gotoMenu(6,'pc_myq_detail.html')">练习题目练习题目练习题目练习题目练习题目练习题目</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>1111</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">02</td>
+					<td class="t-title" onclick="gotoMenu(6,'pc_myq_detail.html')">练习题目练习题目练习题目练习题目练习题目练习题目</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>1111</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">03</td>
+					<td class="t-title" onclick="gotoMenu(6,'pc_myq_detail.html')">练习题目练习题目练习题目练习题目练习题目练习题目</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>1111</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">04</td>
+					<td class="t-title" onclick="gotoMenu(6,'pc_myq_detail.html')">练习题目练习题目练习题目练习题目练习题目练习题目</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>1111</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2" class="all">
+						<input type="checkbox" id="selectall"> <label for="selectall">全选</label>
+						<span class="deleteall">删除全部</span>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+		<div class="commonpage"></div>
+	</div>		
+</div>
+<script type="text/javascript">
+
+$(function(){
+	var pageSize=6;
+	var total=110;
+	var totalPage=10;
+	var current=1;
+	  // total= getList(current,pageSize);
+	  // totalPage=parseInt(((total+pageSize)-1)/pageSize);
+	$(".commonpage").createPage({
+		 pageCount:totalPage,//页数的总数
+         pageSize:pageSize,//每页10条记录
+         current:current, //默认第一页
+         position:"center",
+         backFn:function(pageCurrent,pageSize,pageCount){
+        	// var pageCurrent=current;
+ 	     } 
+  	});
+
+	$(".search_topic").on("click","#selectall",function(){
+		var $checkbox =$(this).parents("table").find("tbody td input[type='checkbox']");
+		$.each($checkbox,function(i,v){
+			if(!v.checked){
+				v.checked=true;
+			}
+		})
+	})
+	$(".search_topic").on("click",".delete",function(){
+		layer.confirm("是否删除该条记录",{icon:3,title:"提示"}, function(index){
+			layer.alert("是");
+			layer.close(index);
+		})
+	})
+	$(".search_topic").on("click",".deleteall",function(){
+		layer.confirm("是否删除全部",{icon:3,title:"提示"}, function(index){
+			layer.alert("是");
+			layer.close(index);
+		})
+	})
+});
+</script>	
+</body>
+</html>

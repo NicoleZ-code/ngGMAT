@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心-已做题目</title>
+</head>
+<body>
+<div class="pc_finished_exercise">
+	<div class="search_condition">
+		<form action="">
+			<div class="search_title">
+				<span class="fold"></span>
+				<span class="find">信息查询</span>
+				<input class="name" type="text" value="题目名称" onfocus="if(value=='题目名称'){value=''}" onblur="if(value==''){value='题目名称'}">
+				<input type="button" class="search" value="SEARCH"></span>
+				<input type="reset" class="reset" value="" title="重置">
+			</div>
+			<ul class="fold_content">
+				<li class="date">
+					<span>做题日期：</span>
+					<input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})">&nbsp;&ndash;&nbsp;
+					<input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})">
+				</li>
+				<li class="subject">
+					<span>所属科目：</span>
+					<input type="checkbox" name="checkbox_1" id="checkbox1" checked="checked"><label for="checkbox1">SC</label>
+					<input type="checkbox" name="checkbox_1" id="checkbox2" checked="checked"><label for="checkbox2">CR</label>
+					<input type="checkbox" name="checkbox_1" id="checkbox3"><label for="checkbox3">RC</label>
+					<input type="checkbox" name="checkbox_1" id="checkbox4"><label for="checkbox4">数学</label>
+				</li>
+				<li class="sort">
+					<span>排序:</span>
+					<select><option value="" selected="selected">按时间</option><option value="">从最新开始</option><option value="">从最早开始</option></select>
+				</li>
+			</ul>
+		</form>
+	</div>
+	<div class="search_topic">
+		<table border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<td width="50">序号</td>
+					<td width="340">题目名称</td>
+					<td width="110">所属题库</td>
+					<td width="110">所属科目</td>
+					<td width="110">用时</td>
+					<td width="120">做题日期</td>
+					<td width="100">做题次数</td>
+					<td width="80">操作</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox">01</td>
+					<td class="title" onclick="gotoMenu(2,'pc_detail_exercise.html')">No part of this book may be reproduced or</td>
+					<td>练习题目</td>
+					<td>SC</td>
+					<td>20s</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>5</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">02</td>
+					<td class="title" onclick="gotoMenu(2,'pc_detail_exercise.html')">No part of this book may be reproduced or tra</td>
+					<td>练习题目</td>
+					<td>SC</td>
+					<td>20s</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>5</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">03</td>
+					<td class="title" onclick="gotoMenu(2,'pc_detail_exercise.html')">No part of this book may be reproduced or tra</td>
+					<td>练习题目</td>
+					<td>SC</td>
+					<td>20s</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>5</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">04</td>
+					<td class="title" onclick="gotoMenu(2,'pc_detail_exercise.html')">No part of this book may be reproduced or tra</td>
+					<td>练习题目</td>
+					<td>SC</td>
+					<td>20s</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>5</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">05</td>
+					<td class="title" onclick="gotoMenu(2,'pc_detail_exercise.html')">No part of this book may be reproduced or tra</td>
+					<td>练习题目</td>
+					<td>SC</td>
+					<td>20s</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>5</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">06</td>
+					<td class="title" onclick="gotoMenu(2,'pc_detail_exercise.html')">No part of this book may be reproduced or tra</td>
+					<td>练习题目</td>
+					<td>SC</td>
+					<td>20s</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>5</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">07</td>
+					<td class="title" onclick="gotoMenu(2,'pc_detail_exercise.html')">No part of this book may be reproduced or tra</td>
+					<td>练习题目</td>
+					<td>SC</td>
+					<td>20s</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>5</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox">08</td>
+					<td class="title" onclick="gotoMenu(2,'pc_detail_exercise.html')">No part of this book may be reproduced or tra</td>
+					<td>练习题目</td>
+					<td>SC</td>
+					<td>20s</td>
+					<td>2016-09-10&nbsp;16:00</td>
+					<td>5</td>
+					<td><span class="delete">删除</span></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2" class="all">
+						<input type="checkbox" id="selectall"> <label for="selectall">全选</label>
+						<span class="deleteall">删除全部</span>
+					</td>
+				</tr>
+			</tfoot>			
+		</table>
+		<div class="commonpage"></div>
+	</div>	
+</div>
+<script type="text/javascript">
+$(function(){
+	var pageSize=6;
+	var total=110;
+	var totalPage=10;
+	var current=1;
+	  // total= getList(current,pageSize);
+	  // totalPage=parseInt(((total+pageSize)-1)/pageSize);
+	$(".commonpage").createPage({
+		 pageCount:totalPage,//页数的总数
+         pageSize:pageSize,//每页10条记录
+         current:current, //默认第一页
+         position:"center",
+         backFn:function(pageCurrent,pageSize,pageCount){
+        	// var pageCurrent=current;
+ 	     } 
+  	});
+	$(".search_topic").on("click","#selectall",function(){
+		var $checkbox =$(this).parents("table").find("tbody td input[type='checkbox']");
+		$.each($checkbox,function(i,v){
+			if(!v.checked){
+				v.checked=true;
+			}
+		})
+	})
+	$(".search_topic").on("click",".delete",function(){
+		layer.confirm("是否删除该条记录",{icon:3,title:"提示"}, function(index){
+			layer.alert("是");
+			layer.close(index);
+		})
+	})
+	$(".search_topic").on("click",".deleteall",function(){
+		layer.confirm("是否删除全部",{icon:3,title:"提示"}, function(index){
+			layer.alert("是");
+			layer.close(index);
+		})
+	})
+});
+</script>
+</body>
+</html>
