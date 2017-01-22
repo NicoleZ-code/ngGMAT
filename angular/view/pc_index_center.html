@@ -1,0 +1,95 @@
+<div id="p_center_left" class="left">
+	<div class="personal">
+		<div class="personal_top">
+			<div class="pic">
+				<img src="public/images/online_exer_1.png">
+			</div>
+			<div class="vip">
+				<img src="public/images/online_exer_3.png">
+			</div>
+		</div>
+		<div class="name">
+			<span>wendy-0809</span><br/>
+			<a href="pc_vip.html" class="vip">升级为VIP</a>
+		</div>
+		<div class="personal_bottom">
+			<div class="personal_1">
+				<h1>VIP会员</h1>
+				<h2>用户类型</h2>
+			</div>
+			<div class="personal_2"></div>
+			<div class="personal_3">
+				<h1>20小时</h1>
+				<h2>学习时长</h2>
+			</div>
+		</div>
+	</div>			
+	<ul id="pc_leftmenus">
+		<li class="pc_title" ui-sref="index.home"><span class="p-simple">我的主页</span></li>
+		<li class="li00">					
+			<span class="p-simple">
+				<span class="bg"></span>
+				<span class="ico"></span>
+				<span class="name">账号设置</span>
+				<span class="arrow"></span>
+			</span>
+			<dl>
+				<dd ui-sref="index.setting_writedata">完善资料</dd>
+				<dd ui-sref="index.setting_resetcode">修改密码</dd>
+			</dl>
+		</li>
+		<li class="li01" ui-sref="index.finished_exercise">
+			<span class="p-simple">
+				<span class="bg"></span>
+				<span class="ico"></span>
+				<span class="name">已做题目</span>
+			</span>	
+		</li>
+		<li class="li02" ui-sref="index.wrong_exercise">
+			<span class="p-simple">
+				<span class="bg"></span>
+				<span class="ico"></span>
+				<span class="name">错题集</span>
+			</span>	
+		</li>
+		<li class="li03" ui-sref="index.exam_record">
+			<span class="p-simple">
+				<span class="bg"></span>
+				<span class="ico"></span>
+				<span class="name">模考记录</span>
+			</span>	
+		</li>
+		<li class="li04" ui-sref="index.mycollect">
+			<span class="p-simple">
+				<span class="bg"></span>
+				<span class="ico"></span>
+				<span class="name">我的收藏</span>
+			</span>
+		</li>
+		<li class="li05" ui-sref="index.myquestions">
+			<span class="p-simple">
+				<span class="bg"></span>
+				<span class="ico"></span>
+				<span class="name">我的提问</span>
+			</span>
+		</li>
+		<li class="li06">
+			<span class="p-simple">
+				<span class="bg"></span>
+				<span class="ico"></span>
+				<span class="name">历史购买</span>
+				<span class="arrow"></span>
+			</span>					
+			<dl>
+				<dd ui-sref="index.r_record">购买记录</dd>
+				<dd ui-sref="index.r_leave">请假记录</dd>
+				<dd ui-sref="index.r_goods">物流查询</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	$(function  () {
+		$("#pc_leftmenus li").eq(0).find(".p-simple").trigger("click"); 
+	})
+</script>

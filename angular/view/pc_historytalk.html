@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心-主页-历史说说</title>
+</head>
+<body>
+	<div class="pc_historytalklist pc_home">
+		<div class="historysign border-common">
+			<div class="pc_title">历史签到</div>
+			<ul>
+				<li><span class="ico ico1"></span>
+					<span class="sign_num">喝水<em class="num">344</em>次</span>
+				</li>
+				<li><span class="ico ico2"></span>
+					<span class="sign_num">吃水果<em class="num">442</em>次</span>
+				</li>
+				<li><span class="ico ico3"></span>
+					<span class="sign_num">运动<em class="num">3444</em>次</span>
+				</li>
+				<li><span class="ico ico4"></span>
+					<span class="sign_num">休息<em class="num">24444</em>次</span>
+				</li>
+			</ul>
+		</div>
+		<div class="historylist ">
+			<div class="pc_title border-common">历史说说</div>
+			<ul class="htalks_list">
+				<li class="border-common">
+					<span class="msg">三月三月三月三月三月三月，三月三月三月三月...</span>
+					<span class="date">2015-12-12 09:09:09</span>
+					<dl class="expression">
+					<dd class="dd01">
+						<span class="ico" data-info="点赞"></span>						
+						<span class="num">122</span>
+						<span class="anmi_ico"></span>
+					</dd>
+					<dd class="dd02">
+						<span class="ico" data-info="拥抱"></span>						
+						<span class="num">333</span>
+						<span class="anmi_ico"></span>
+					</dd>
+					<dd class="dd03">
+						<span class="ico" data-info="安慰"></span>
+						<span class="num">444</span>
+						<span class="anmi_ico"></span>						
+					</dd>
+				</dl>
+				</li>
+				<li class="border-common">
+					<span class="msg">三月三月三月三月三月三月，三月三月三月三月...</span>
+					<span class="date">2015-12-12 09:09:09</span>
+					<dl class="expression">
+					<dd class="dd01">
+						<span class="ico" data-info="点赞"></span>						
+						<span class="num">122</span>
+						<span class="anmi_ico"></span>
+					</dd>
+					<dd class="dd02">
+						<span class="ico" data-info="拥抱"></span>						
+						<span class="num">333</span>
+						<span class="anmi_ico"></span>
+					</dd>
+					<dd class="dd03">
+						<span class="ico" data-info="安慰"></span>
+						<span class="num">444</span>
+						<span class="anmi_ico"></span>						
+					</dd>
+				</dl>
+				</li>
+				<li class="border-common">
+					<span class="msg">三月三月三月三月三月三月，三月三月三月三月...</span>
+					<span class="date">2015-12-12 09:09:09</span>
+					<dl class="expression">
+					<dd class="dd01">
+						<span class="ico" data-info="点赞"></span>						
+						<span class="num">122</span>
+						<span class="anmi_ico"></span>
+					</dd>
+					<dd class="dd02">
+						<span class="ico" data-info="拥抱"></span>						
+						<span class="num">333</span>
+						<span class="anmi_ico"></span>
+					</dd>
+					<dd class="dd03">
+						<span class="ico" data-info="安慰"></span>
+						<span class="num">444</span>
+						<span class="anmi_ico"></span>						
+					</dd>
+				</dl>
+				</li>
+			</ul>
+			<div class="commonpage"></div>
+		</div>
+		
+	</div>
+<script type="text/javascript">
+$(function(){
+	var pageSize=6;
+	var total=110;
+	var totalPage=10;
+	var current=1;
+	  // total= getList(current,pageSize);
+	  // totalPage=parseInt(((total+pageSize)-1)/pageSize);
+	$(".commonpage").createPage({
+		 pageCount:totalPage,//页数的总数
+         pageSize:pageSize,//每页10条记录
+         current:current, //默认第一页
+         position:"center",
+         backFn:function(pageCurrent,pageSize,pageCount){
+        	// var pageCurrent=current;
+ 	     } 
+  	});
+
+	$(".expression dd ").on("click"," .ico",function(){
+		anmiateIco(this);
+		var $num =$(this).parent("").find(".num");
+		var value = parseInt($num.html())+1;
+		$num.html(value);
+	})
+});
+</script>		
+</body>
+</html>
