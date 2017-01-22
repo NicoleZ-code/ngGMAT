@@ -141,32 +141,32 @@ angular.module('utils',[])
 /**
  * 搜索菜单
  */
-.directive('search',['',function(){
-    return {
-        restrict:'E',
-        replace:true,
-        template:'',
-        link: function($scope, iElm, iAttrs, controller) {
+// .directive('search',['',function(){
+//     return {
+//         restrict:'E',
+//         replace:true,
+//         template:'',
+//         link: function($scope, iElm, iAttrs, controller) {
             
-        }
-    }
-}])
+//         }
+//     }
+// }])
 /**
  * 折叠
  */
-.directive('fold',['',function(){
-    return {
-        restrict:'E',
-        replace:true,
-        controller:function($scope, element, attrs){
+// .directive('fold',['',function(){
+//     return {
+//         restrict:'E',
+//         replace:true,
+//         controller:function($scope, element, attrs){
           
-        },
-        template:'',
-        link: function($scope, iElm, iAttrs, controller) {
+//         },
+//         template:'',
+//         link: function($scope, iElm, iAttrs, controller) {
             
-        }
-    }
-}])
+//         }
+//     }
+// }])
 
 /**
  * 实体课程-列表展示 
