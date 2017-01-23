@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>个人中心-错题集</title>
-</head>
-<body>
+<!-- 个人中心-错题集 -->
 <div class="pc_wrong_exercise">
-	<div class="search_condition">
+	<div class="search_condition" ng-controller="searchConditionCtrl">
 		<form action="">
 			<div class="search_title">
-				<span class="fold"></span>
+				<span class="fold" ng-click="conditionToggle()" ng-class="{'up':conditionShow == false}"></span>
 				<span class="find">信息查询</span>
-				<input class="name" type="text" value="题目名称" onfocus="if(value=='题目名称'){value=''}" onblur="if(value==''){value='题目名称'}">
-				<input type="button" class="search" value="SEARCH">
+				<input class="name" type="text" placeholder="题目名称">
+				<input type="button" class="search" value="SEARCH"></span>
 				<input type="reset" class="reset" value="" title="重置">
 			</div>
-			<ul class="fold_content">
+			<ul class="fold_content" ng-if="conditionShow == true">
 				<li class="date">
 					<span>做题日期：</span>
 					<input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})">&nbsp;&ndash;&nbsp;
@@ -153,5 +147,3 @@ $(function(){
 	})
 });
 </script>
-</body>
-</html>

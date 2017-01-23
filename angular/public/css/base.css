@@ -61,7 +61,7 @@ iframe{
 }
 body {
   width: 100%;
-  background: #fff;
+  background: #f1f1f1;
   color: #2a2a2a;
   font-family: "Microsoft YaHei";
   height: 100%;
@@ -4104,7 +4104,7 @@ span.yellow{
     float: right;
     margin-right: 20px;
 }
-#p_center_left ul#pc_leftmenus li.arrow.open{
+#p_center_left ul#pc_leftmenus li .arrow.open{
    background: url(../images/pcenterindex.png) -0px -228px no-repeat;
 }
 #p_center_left ul#pc_leftmenus li dl{
@@ -4113,7 +4113,7 @@ span.yellow{
     border-bottom: 1px solid #EDEDED;
     background-color: #F1F1F1;
     margin-bottom: -2px;
-    display: none;
+    /* display: none; */
 }
 #p_center_left ul#pc_leftmenus li dl dd{
    border-bottom: 1px solid #F2F1F1;
@@ -4616,7 +4616,7 @@ span.yellow{
   cursor: pointer;
 }
 .pc_detail_exercise .pc_detail_exercise_content .answer_detail{
-  display: none;
+  /* display: none; */
 }
 .pc_detail_exercise .pc_detail_exercise_content .answer_detail span{
   color: #333;
