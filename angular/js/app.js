@@ -72,28 +72,20 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 }
              })      
         };
-        /*$stateProvider.state('index.course.detail', {
-            url: '/{courseId:[0-9]{1,4}}',
-            views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
-                'main@index': {
-                    templateUrl: 'view/course_detail.html'
+        $stateProvider.state('index.finished_exercise.detail', {
+            url: '/index.finished_exercise.detail',
+            views: { 
+                'mainRight@index': {
+                    templateUrl: 'view/pc_detail_exercise.html'
                 } 
             }
-        })        
+        })   
+        /*     
         .state('index.videoClass.detail', {
             url: '/{courseId:[0-9]{1,4}}',
             views:{
                 'main@index': {
                     templateUrl: 'view/videoClassView.html'
-                }
-            }
-        })  
-
-        .state('index.interactivePlace.more', {
-            url: '/index.interactivePlace.more',
-            views:{
-                'main@index': {
-                    templateUrl: 'view/interactive_more.html'
                 }
             }
         })   */
