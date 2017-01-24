@@ -23,6 +23,11 @@ homeModule.controller("indexLeftCtrl",function($scope, $http, $state, $statePara
         $scope.isShow2 = false;
         $scope.isShow3 = param;
 	}
+	$scope.setCurrent4 = function(){//我的主页
+        $scope.isShow1 = false;
+        $scope.isShow2 = false;
+        $scope.isShow3 = 0;
+	}
 })
 //折叠功能
 .controller("searchConditionCtrl",function($scope, $http, $state, $stateParams){
@@ -43,5 +48,16 @@ homeModule.controller("indexLeftCtrl",function($scope, $http, $state, $statePara
 	$scope.isShow = false;
 	$scope.isToggle = function(){
 		$scope.isShow = !$scope.isShow;
+	}
+})
+//我的收藏
+.controller("mycollectCtrl",function($scope, $http, $state, $stateParams){
+	$http.get("data/mycollectExercise.json")
+	.success(function(data){
+		$scope.datas = data;
+	});
+	$scope.data = {current:1};
+	$scope.setCurrent = function(param){
+		$scope.data.current = param;
 	}
 })

@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>个人中心-我的收藏</title>
-</head>
-<body>
+<!-- 个人中心-我的收藏 -->
 <div class="pc_mycollect">
-	<div class="search_condition">
+	<div class="search_condition" ng-controller="searchConditionCtrl">
 		<form action="">
 			<div class="search_title">
-				<span class="fold"></span>
+				<span class="fold" ng-click="conditionToggle()" ng-class="{'up':conditionShow == false}"></span>
 				<span class="find">信息查询</span>
-				<input class="name" type="text" value="关键字" onfocus="if(value=='关键字'){value=''}" onblur="if(value==''){value='关键字'}">
-				<input type="button" class="search" value="SEARCH">
+				<input class="name" type="text" placeholder="关键字">
+				<input type="button" class="search" value="SEARCH"></span>
 				<input type="reset" class="reset" value="" title="重置">
 			</div>
-			<ul class="fold_content">
+			<ul class="fold_content" ng-if="conditionShow == true">
 				<li class="date">
 					<span>收藏日期：</span>
 					<input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})">&nbsp;&ndash;&nbsp;
@@ -39,14 +33,14 @@
 			</ul>
 		</form>
 	</div>
-	<div class="search_topic">
+	<div class="search_topic" ng-controller="mycollectCtrl">
 		<ul class="search_list">
-			<li>习题</li>
-			<li>资讯</li>
-			<li>心经</li>
-			<li>机经</li>
+			<li ng-click="setCurrent(1)">习题</li>
+			<li ng-click="setCurrent(2)">资讯</li>
+			<li ng-click="setCurrent(3)">心经</li>
+			<li ng-click="setCurrent(4)">机经</li>
 		</ul>
-		<table border="0" cellspacing="0" cellpadding="0">
+		<table border="0" cellspacing="0" cellpadding="0" ng-if="data.current == 1">
 			<thead>
 				<tr>
 					<td width="50">序号</td>
@@ -60,44 +54,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><input type="checkbox">01</td>
-					<td class="title">No part of this book may be reproduced or</td>
-					<td>练习题目</td>
-					<td>SC</td>
-					<td>20s</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">02</td>
-					<td class="title">No part of this book may be reproduced or tra</td>
-					<td>练习题目</td>
-					<td>SC</td>
-					<td>20s</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">03</td>
-					<td class="title">No part of this book may be reproduced or tra</td>
-					<td>练习题目</td>
-					<td>SC</td>
-					<td>20s</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">04</td>
-					<td class="title">No part of this book may be reproduced or tra</td>
-					<td>练习题目</td>
-					<td>SC</td>
-					<td>20s</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
+				<tr ng-repeat="item in datas | filter:{type:'a'} | limitTo:4">
+					<td><input type="checkbox">{{$index+1}}</td>
+					<td class="title">{{item.topic_name}}</td>
+					<td>{{item.topic_bank}}</td>
+					<td>{{item.topic_subject}}</td>
+					<td>{{item.use_time}}</td>
+					<td>{{item.date}}</td>
+					<td>{{item.do_count}}</td>
 					<td><span class="delete">删除</span></td>
 				</tr>
 			</tbody>
@@ -110,7 +74,7 @@
 				</tr>
 			</tfoot>				
 		</table>
-		<table border="0" cellspacing="0" cellpadding="0">
+		<table border="0" cellspacing="0" cellpadding="0" ng-if="data.current == 2">
 			<thead>
 				<tr>
 					<td width="50">序号</td>
@@ -121,32 +85,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><input type="checkbox">01</td>
-					<td class="title">No part of this book may be reproduced or</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">02</td>
-					<td class="title">No part of this book may be reproduced or tra</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">03</td>
-					<td class="title">No part of this book may be reproduced or</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">04</td>
-					<td class="title">No part of this book may be reproduced or tra</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
+				<tr ng-repeat="item in datas | filter:{type:'b'} | limitTo:4">
+					<td><input type="checkbox">{{$index+1}}</td>
+					<td class="title">{{item.topic_name}}</td>
+					<td>{{item.date}}</td>
+					<td>{{item.do_count}}</td>
 					<td><span class="delete">删除</span></td>
 				</tr>
 			</tbody>
@@ -159,7 +102,7 @@
 				</tr>
 			</tfoot>			
 		</table>
-		<table border="0" cellspacing="0" cellpadding="0">
+		<table border="0" cellspacing="0" cellpadding="0" ng-if="data.current == 3">
 			<thead>
 				<tr>
 					<td width="50">序号</td>
@@ -170,32 +113,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><input type="checkbox">01</td>
-					<td class="title">No part of this book may be reproduced or</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">02</td>
-					<td class="title">No part of this book may be reproduced or tra</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">03</td>
-					<td class="title">No part of this book may be reproduced or</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">04</td>
-					<td class="title">No part of this book may be reproduced or tra</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
+				<tr ng-repeat="item in datas | filter:{type:'c'} | limitTo:4">
+					<td><input type="checkbox">{{$index+1}}</td>
+					<td class="title">{{item.topic_name}}</td>
+					<td>{{item.date}}</td>
+					<td>{{item.do_count}}</td>
 					<td><span class="delete">删除</span></td>
 				</tr>
 			</tbody>
@@ -208,7 +130,7 @@
 				</tr>
 			</tfoot>			
 		</table>
-		<table border="0" cellspacing="0" cellpadding="0">
+		<table border="0" cellspacing="0" cellpadding="0" ng-if="data.current == 4">
 			<thead>
 				<tr>
 					<td width="50">序号</td>
@@ -219,32 +141,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><input type="checkbox">01</td>
-					<td class="title">No part of this book may be reproduced or</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">02</td>
-					<td class="title">No part of this book may be reproduced or tra</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">03</td>
-					<td class="title">No part of this book may be reproduced or</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">04</td>
-					<td class="title">No part of this book may be reproduced or tra</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
+				<tr ng-repeat="item in datas | filter:{type:'d'} | limitTo:4">
+					<td><input type="checkbox">{{$index+1}}</td>
+					<td class="title">{{item.topic_name}}</td>
+					<td>{{item.date}}</td>
+					<td>{{item.do_count}}</td>
 					<td><span class="delete">删除</span></td>
 				</tr>
 			</tbody>
@@ -311,5 +212,3 @@ $(function(){
 	});
 });
 </script>	
-</body>
-</html>

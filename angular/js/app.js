@@ -72,32 +72,31 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 }
              })      
         };
-        $stateProvider.state('index.finished_exercise.detail', {
-            url: '/index.finished_exercise.detail',
+        $stateProvider.state('index.finished_exercise.detail', {//已做题目详情页
+            url: '/{courseId:[0-9]{1,4}}',
             views: { 
                 'mainRight@index': {
                     templateUrl: 'view/pc_detail_exercise.html'
                 } 
             }
-        })   
-        /*     
-        .state('index.videoClass.detail', {
+        }) 
+        .state('index.exam_record.detail', {//模考记录详情页
             url: '/{courseId:[0-9]{1,4}}',
-            views:{
-                'main@index': {
-                    templateUrl: 'view/videoClassView.html'
-                }
+            views: { 
+                'mainRight@index': {
+                    templateUrl: 'view/pc_exam_detail.html'
+                } 
             }
-        })   */
+        })  
+        .state('index.home.historytalk', {//进入历史说说
+            url: '/index.home.historytalk',
+            views: { 
+                'mainRight@index': {
+                    templateUrl: 'view/pc_historytalk.html'
+                } 
+            }
+        })  
 
-        // .state('register',{
-        //     url:'/register',
-        //     templateUrl: 'view/register.html'
-        // })
-        // .state('bookdetail', {
-        //     url: '/bookdetail/:bookId', //注意这里在路由中传参数的方式
-        //     templateUrl: 'view/bookDetail.html'
-        // })
 });
 
 /** 

@@ -44,7 +44,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="item in datas | limitTo:5" ui-sref="index.finished_exercise.detail">
+				<tr ng-repeat="item in datas | limitTo:8" ui-sref="index.finished_exercise.detail({courseId:item.id})">
 					<td><input type="checkbox">{{$index+1}}</td>
 					<td class="title">{{item.topic_name}}</td>
 					<td>{{item.topic_bank}}</td>

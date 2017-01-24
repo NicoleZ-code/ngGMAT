@@ -29,7 +29,7 @@
 			</ul>
 		</form>
 	</div>
-	<div class="search_topic">
+	<div class="search_topic" ng-controller="exerciseCtrl">
 		<table border="0" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
@@ -44,54 +44,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><input type="checkbox">01</td>
-					<td class="title">No part of this book ma</td>
-					<td>练习题目</td>
-					<td>SC</td>
-					<td>20s</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">02</td>
-					<td class="title">No part of this book may b</td>
-					<td>练习题目</td>
-					<td>SC</td>
-					<td>20s</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">03</td>
-					<td class="title">No part of this book may be </td>
-					<td>练习题目</td>
-					<td>SC</td>
-					<td>20s</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">04</td>
-					<td class="title">No part of this book may be ra</td>
-					<td>练习题目</td>
-					<td>SC</td>
-					<td>20s</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
-					<td><span class="delete">删除</span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox">05</td>
-					<td class="title">No part of this book may be repr or tra</td>
-					<td>练习题目</td>
-					<td>SC</td>
-					<td>20s</td>
-					<td>2016-09-10&nbsp;16:00</td>
-					<td>5</td>
+				<tr ng-repeat="item in datas | limitTo:5" ui-sref="index.finished_exercise.detail({courseId:item.id})">
+					<td><input type="checkbox">{{$index+1}}</td>
+					<td class="title">{{item.topic_name}}</td>
+					<td>{{item.topic_bank}}</td>
+					<td>{{item.topic_subject}}</td>
+					<td>{{item.use_time}}</td>
+					<td>{{item.date}}</td>
+					<td>{{item.do_count}}</td>
 					<td><span class="delete">删除</span></td>
 				</tr>
 			</tbody>
@@ -104,27 +64,11 @@
 				</tr>
 			</tfoot>			
 		</table>
-		<div class="commonpage"></div>
-	</div>
+	</div>	
 	
 </div>
 <script type="text/javascript">
 $(function(){
-	var pageSize=6;
-	var total=110;
-	var totalPage=10;
-	var current=1;
-	  // total= getList(current,pageSize);
-	  // totalPage=parseInt(((total+pageSize)-1)/pageSize);
-	$(".commonpage").createPage({
-		 pageCount:totalPage,//页数的总数
-         pageSize:pageSize,//每页10条记录
-         current:current, //默认第一页
-         position:"center",
-         backFn:function(pageCurrent,pageSize,pageCount){
-        	// var pageCurrent=current;
- 	     } 
-  	});
   	$(".search_topic").on("click","#selectall",function(){
 		var $checkbox =$(this).parents("table").find("tbody td input[type='checkbox']");
 		$.each($checkbox,function(i,v){
