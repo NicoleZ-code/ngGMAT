@@ -88,24 +88,15 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 } 
             }
         })  
-        /*     
-        .state('index.videoClass.detail', {
-            url: '/{courseId:[0-9]{1,4}}',
-            views:{
-                'main@index': {
-                    templateUrl: 'view/videoClassView.html'
-                }
+        .state('index.home.historytalk', {//进入历史说说
+            url: '/index.home.historytalk',
+            views: { 
+                'mainRight@index': {
+                    templateUrl: 'view/pc_historytalk.html'
+                } 
             }
-        })   */
+        })  
 
-        // .state('register',{
-        //     url:'/register',
-        //     templateUrl: 'view/register.html'
-        // })
-        // .state('bookdetail', {
-        //     url: '/bookdetail/:bookId', //注意这里在路由中传参数的方式
-        //     templateUrl: 'view/bookDetail.html'
-        // })
 });
 
 /** 

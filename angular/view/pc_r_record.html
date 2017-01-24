@@ -1,84 +1,78 @@
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>个人中心-购买记录</title>
-</head>
-<body>
-	<div class="pc_r_record">
-		<div class="search_condition">
-			<form action="">
-				<div class="search_title">
-					<span class="fold"></span>
-					<span class="find">信息查询</span>
-					<input class="name" type="text" value="商品名称" onfocus="if(value=='商品名称'){value=''}" onblur="if(value==''){value='商品名称'}">
-					<input type="button" class="search" value="SEARCH">
-					<input type="reset" class="reset" value="" title="重置">
-				</div>
-				<ul class="fold_content">
-					<li class="order">
-						<span>订单状态:</span>
-						<select><option value="" selected="selected">已完成</option><option value="">待付款</option></select>
-						<span>交易时间:</span>
-						<input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})">
-					</li>
-					<li class="sort">
-						<span>排序:</span>
-						<select><option value="" selected="selected">按时间</option><option value="">从最新开始</option><option value="">从最早开始</option></select>
-					</li>
-				</ul>
-			</form>
-		</div>
-		<div class="search_topic">
-			<table border="0" cellspacing="0" cellpadding="0">
-				<thead>
-					<tr>
-						<td width="100">订单编号</td>
-						<td width="240">订单商品</td>
-						<td width="160">购买数量</td>
-						<td width="170">价格</td>
-						<td width="180">交易时间</td>
-						<td width="130">状态</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr onclick="gotoMenu(7,'pc_r_buydetail.html')">
-						<td>0001</td>
-						<td>GMAT阅读课程</td>
-						<td>1</td>
-						<td>1698</td>
-						<td>2016-09-10</td>
-						<td>已完成</td>
-					</tr>
-					<tr onclick="gotoMenu(7,'pc_r_buydetail.html')">
-						<td>0002</td>
-						<td>GMAT阅读课程</td>
-						<td>1</td>
-						<td>1698</td>
-						<td>2016-09-10</td>
-						<td>已完成</td>
-					</tr>
-					<tr onclick="gotoMenu(7,'pc_r_buydetail.html')">
-						<td>0003</td>
-						<td>GMAT阅读课程</td>
-						<td>1</td>
-						<td>1698</td>
-						<td>2016-09-10</td>
-						<td>已完成</td>
-					</tr>
-					<tr onclick="gotoMenu(7,'pc_r_buydetail.html')">
-						<td>0004</td>
-						<td>GMAT阅读课程</td>
-						<td>1</td>
-						<td>1698</td>
-						<td>2016-09-10</td>
-						<td>已完成</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="commonpage"></div>
-		</div>	
+<!-- 个人中心-购买记录 -->
+<div class="pc_r_record">
+	<div class="search_condition" ng-controller="searchConditionCtrl">
+		<form action="">
+			<div class="search_title">
+				<span class="fold" ng-click="conditionToggle()" ng-class="{'up':conditionShow == false}"></span>
+				<span class="find">信息查询</span>
+				<input class="name" type="text" placeholder="商品名称">
+				<input type="button" class="search" value="SEARCH"></span>
+				<input type="reset" class="reset" value="" title="重置">
+			</div>
+			<ul class="fold_content" ng-if="conditionShow == true">
+				<li class="order">
+					<span>订单状态:</span>
+					<select><option value="" selected="selected">已完成</option><option value="">待付款</option></select>
+					<span>交易时间:</span>
+					<input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})">
+				</li>
+				<li class="sort">
+					<span>排序:</span>
+					<select><option value="" selected="selected">按时间</option><option value="">从最新开始</option><option value="">从最早开始</option></select>
+				</li>
+			</ul>
+		</form>
 	</div>
+	<div class="search_topic">
+		<table border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<td width="100">订单编号</td>
+					<td width="240">订单商品</td>
+					<td width="160">购买数量</td>
+					<td width="170">价格</td>
+					<td width="180">交易时间</td>
+					<td width="130">状态</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr onclick="gotoMenu(7,'pc_r_buydetail.html')">
+					<td>0001</td>
+					<td>GMAT阅读课程</td>
+					<td>1</td>
+					<td>1698</td>
+					<td>2016-09-10</td>
+					<td>已完成</td>
+				</tr>
+				<tr onclick="gotoMenu(7,'pc_r_buydetail.html')">
+					<td>0002</td>
+					<td>GMAT阅读课程</td>
+					<td>1</td>
+					<td>1698</td>
+					<td>2016-09-10</td>
+					<td>已完成</td>
+				</tr>
+				<tr onclick="gotoMenu(7,'pc_r_buydetail.html')">
+					<td>0003</td>
+					<td>GMAT阅读课程</td>
+					<td>1</td>
+					<td>1698</td>
+					<td>2016-09-10</td>
+					<td>已完成</td>
+				</tr>
+				<tr onclick="gotoMenu(7,'pc_r_buydetail.html')">
+					<td>0004</td>
+					<td>GMAT阅读课程</td>
+					<td>1</td>
+					<td>1698</td>
+					<td>2016-09-10</td>
+					<td>已完成</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="commonpage"></div>
+	</div>	
+</div>
 <script type="text/javascript">
 $(function(){
 	var pageSize=6;
