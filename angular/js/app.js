@@ -72,14 +72,22 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 }
              })      
         };
-        $stateProvider.state('index.finished_exercise.detail', {
-            url: '/index.finished_exercise.detail',
+        $stateProvider.state('index.finished_exercise.detail', {//已做题目详情页
+            url: '/{courseId:[0-9]{1,4}}',
             views: { 
                 'mainRight@index': {
                     templateUrl: 'view/pc_detail_exercise.html'
                 } 
             }
-        })   
+        }) 
+        .state('index.exam_record.detail', {//模考记录详情页
+            url: '/{courseId:[0-9]{1,4}}',
+            views: { 
+                'mainRight@index': {
+                    templateUrl: 'view/pc_exam_detail.html'
+                } 
+            }
+        })  
         /*     
         .state('index.videoClass.detail', {
             url: '/{courseId:[0-9]{1,4}}',
